@@ -1,0 +1,15 @@
+add:add.o method1.o method2.o method3.o
+	gcc add.o method1.o method2.o method3.o -o add
+
+add.o:add.c
+	gcc -c add.c
+method1.o:method1.c
+	gcc -c method1.c
+method2.o:method2.c
+	gcc -c method2.c
+method3.o:method3.c
+	gcc -c method3.c
+
+.PHONY:clean
+clean:
+	rm -rf add add.o method1.o method2.o method3.o	
